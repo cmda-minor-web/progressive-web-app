@@ -12,16 +12,16 @@
 
         <section data-genre-name="Action"><h2>Action</h2><div class="wrapper">
 
-            <% data.forEach((movie)=> { %>
+        
                 
-                <a href="movie/<%=movie.id%>">
+                <a href="#movie/<%=movie.id%>">
                     <article>
                         <h3><%= movie.title %></h3>
                         <img src="https://image.tmdb.org/t/p/w342/<%= movie.poster_path %>" alt="<%= movie.title %>">
                         <div data-ui="rating"><%= movie.vote_average %></div>
                     </article>
                 </a>
-            <%})%>   
+     
         </div>
     </section>
    
