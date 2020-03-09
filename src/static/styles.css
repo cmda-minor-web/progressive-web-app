@@ -1,0 +1,322 @@
+@font-face {
+	font-family: NASA;
+	src: url(./media/fonts/nasalization-rg.woff);
+}
+
+:root {
+	--title-font: "NASA";
+	--normal-font: Arial, Helvetica, sans-serif;
+	--highlight-color: #0E5BD8;
+	--primary-color: white;
+	--placeholder-color: #E4E5E7;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body,
+h1,
+p {
+	margin: 0px;
+}
+
+main {
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+/* Overview section */
+
+#overview {
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+#overview>div:first-of-type {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 0px 0px 0px;
+	height: 5vh;
+}
+
+#overview>div:first-of-type img {
+	height: 50px;
+	width: auto;
+}
+
+#overview>div:first-of-type h1 {
+	font-family: var(--title-font), var(--normal-font);
+	font-size: 40px;
+	margin: 0px 0px 0px 10px;
+	display: inline-block;
+	cursor: default;
+}
+
+/* User actions */
+
+#actions {
+	margin: 0px auto;
+	width: fit-content;
+}
+
+#filters,
+#sort {
+	font-family: var(--normal-font);
+	width: fit-content;
+	height: 20px;
+	display: inline-block;
+}
+
+#filters {
+	margin: 10px 50px 20px 0px;
+}
+
+#sort {
+	margin: 10px 0px 20px 50px;
+}
+
+#filters p,
+#sort p {
+	display: inline-block;
+	cursor: default;
+}
+
+#filters p:first-of-type,
+#sort p:first-of-type {
+	font-weight: 600;
+}
+
+#filters p:nth-of-type(3),
+#filters p:last-of-type,
+#sort p:last-of-type {
+	margin-left: 10px;
+}
+
+#filters p:not(:first-of-type),
+#sort p:not(:first-of-type) {
+	cursor: pointer;
+}
+
+#filters p.activeFilter,
+#sort p.activeSort {
+	border-bottom: 4px solid var(--highlight-color);
+}
+
+/* Content section */
+
+#overview>div:last-of-type {
+	height: calc(95vh - 130px);
+	max-height: calc(95vh - 130px);
+	width: 84vw;
+	padding: 0px 8vw 50px 8vw;
+	overflow-y: scroll;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* Image reflow */
+
+#overview>div:last-of-type>span,
+#overview>div:last-of-type a>span {
+	background-color: var(--placeholder-color);
+	width: 320px;
+	height: 320px;
+	margin: 10px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+#overview>div:last-of-type>span:empty::after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	transform: translateX(-100%);
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0));
+	animation: pulse 2s infinite;
+	z-index: 2;
+}
+
+/* Used (https://codepen.io/JCLee/pen/dyPejGV?editors=0100) by "JCLee" as basis for this animation */
+@keyframes pulse {
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+/* Loading animation */
+
+#overview>div:last-of-type>div:first-of-type {
+	background-color: var(--primary-color);
+	height: 150px;
+	width: 150px;
+	text-align: center;
+	border: 3px solid var(--primary-color);
+	border-radius: 9999px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	box-shadow: 0 0 10px black;
+}
+
+#overview>div:last-of-type .loadingAnim::before {
+	content: "";
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	left: calc(-50vw + 75px);
+	top: calc(-50vh + 75px);
+	z-index: 9;
+	pointer-events: none;
+}
+
+#overview>div:last-of-type>div:first-of-type>span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	text-align: center;
+	font-family: var(--normal-font);
+}
+
+#overview>div:last-of-type>div:first-of-type>div {
+	height: 130px;
+	width: 130px;
+	border: 6px solid var(--highlight-color);
+	border-bottom-color: transparent;
+	border-radius: 9999px;
+	animation: 1000ms loadAnim linear infinite;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 10;
+}
+
+/* Used (https://codepen.io/vank0/pen/mARwLg?editors=1100) by vank0 as basis for this animation*/
+@keyframes loadAnim {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Content */
+
+#overview>div:last-of-type span p {
+	position: absolute;
+	z-index: 999;
+	bottom: 0px;
+	right: 0px;
+	font-family: "NASA", var(--normal-font);
+	color: white;
+}
+
+#overview>div:last-of-type span img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+	position: relative;
+	z-index: 3;
+}
+
+#overview>div:last-of-type a:hover span {
+	outline: 10px solid var(--highlight-color);
+	pointer-events: auto;
+}
+
+#overview>div:last-of-type a span img {
+	pointer-events: auto;
+}
+
+/* Detail section */
+
+#detail {
+	background-color: var(--highlight-color);
+	height: calc(100vh - 100px);
+	width: calc(100vw - 100px);
+	padding: 50px;
+	display: grid;
+	grid-template-columns: auto 650px;
+	grid-column-gap: 50px;
+	grid-template-rows: auto auto auto auto auto 1fr;
+	color: var(--primary-color);
+	font-family: var(--normal-font);
+}
+
+#detail>img {
+	grid-column: 1 / 1;
+	grid-row: 1 / 8;
+	width: 100%;
+	max-height: calc(100vh - 100px);
+	object-fit: contain;
+	justify-self: center;
+	align-self: center;
+	max-width: 900px;
+}
+
+#detail>a:first-of-type {
+	grid-column: 2 / 3;
+	grid-row: 1 / 1;
+	justify-self: end;
+	display: block;
+	margin-bottom: 20px;
+}
+
+#detail>h1 {
+	grid-column: 2 / 3;
+	grid-row: 1 / 1;
+	align-self: end;
+	font-size: 50px;
+	margin-bottom: 10px;
+	line-height: 1;
+	width: 100%;
+	margin-top: 100px;
+}
+
+#detail>p {
+	align-self: start;
+	grid-column: 2 / 3;
+	font-size: 20px;
+}
+
+#detail>p:first-of-type {
+	grid-row: 3 / 3;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+
+#detail>p:nth-of-type(2) {
+	grid-row: 4 / 4;
+	margin-bottom: 20px;
+}
+
+#detail>p:nth-of-type(3) {
+	grid-row: 5 / 5;
+	margin-bottom: 20px;
+}
+
+/* Styling classes */
+.hide {
+	display: none;
+}
+
+.filtered {
+	position: absolute;
+	left: -9999px;
+}

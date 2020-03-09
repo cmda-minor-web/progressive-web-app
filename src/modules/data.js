@@ -12,6 +12,17 @@ const cleanData = (data, properties) => {
 	return IDgenerator(data)
 }
 
+//Filter out all non image media_types
+function filterDataMedia_types(data) {
+	return data.filter(item => item.media_type === 'image')
+}
+
+//Add "public domain" to object items without a copyright key
+function copyrightGoodDefault(data) {
+	data.map(item => item.copyright = (item.copyright === undefined) ? "public domain" : item.copyright)
+	return data
+}
+
 //Give each data object an unique ID
 function IDgenerator(data) {
 	let index = 0
@@ -21,17 +32,6 @@ function IDgenerator(data) {
 		item.id = index
 		index++
 	})
-	return data
-}
-
-//Filter out all non image media_types
-function filterDataMedia_types(data) {
-	return data.filter(item => item.media_type === 'image')
-}
-
-//Add "public domain" to object items without a copyright key
-function copyrightGoodDefault(data) {
-	data.map(item => item.copyright = (item.copyright === undefined) ? "public domain" : item.copyright)
 	return data
 }
 
