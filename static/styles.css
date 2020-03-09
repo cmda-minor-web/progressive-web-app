@@ -54,55 +54,6 @@ main {
 	cursor: default;
 }
 
-/* User actions */
-
-#actions {
-	margin: 0px auto;
-	width: fit-content;
-}
-
-#filters,
-#sort {
-	font-family: var(--normal-font);
-	width: fit-content;
-	height: 20px;
-	display: inline-block;
-}
-
-#filters {
-	margin: 10px 50px 20px 0px;
-}
-
-#sort {
-	margin: 10px 0px 20px 50px;
-}
-
-#filters p,
-#sort p {
-	display: inline-block;
-	cursor: default;
-}
-
-#filters p:first-of-type,
-#sort p:first-of-type {
-	font-weight: 600;
-}
-
-#filters p:nth-of-type(3),
-#filters p:last-of-type,
-#sort p:last-of-type {
-	margin-left: 10px;
-}
-
-#filters p:not(:first-of-type),
-#sort p:not(:first-of-type) {
-	cursor: pointer;
-}
-
-#filters p.activeFilter,
-#sort p.activeSort {
-	border-bottom: 4px solid var(--highlight-color);
-}
 
 /* Content section */
 
@@ -128,91 +79,6 @@ main {
 	display: block;
 	position: relative;
 	overflow: hidden;
-}
-
-#overview>div:last-of-type>span:empty::after {
-	content: '';
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	transform: translateX(-100%);
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0));
-	animation: pulse 2s infinite;
-	z-index: 2;
-}
-
-/* Used (https://codepen.io/JCLee/pen/dyPejGV?editors=0100) by "JCLee" as basis for this animation */
-@keyframes pulse {
-	100% {
-		transform: translateX(100%);
-	}
-}
-
-/* Loading animation */
-
-#overview>div:last-of-type>div:first-of-type {
-	background-color: var(--primary-color);
-	height: 150px;
-	width: 150px;
-	text-align: center;
-	border: 3px solid var(--primary-color);
-	border-radius: 9999px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	z-index: 10;
-	box-shadow: 0 0 10px black;
-}
-
-#overview>div:last-of-type .loadingAnim::before {
-	content: "";
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.1);
-	position: absolute;
-	left: calc(-50vw + 75px);
-	top: calc(-50vh + 75px);
-	z-index: 9;
-	pointer-events: none;
-}
-
-#overview>div:last-of-type>div:first-of-type>span {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	width: 60px;
-	text-align: center;
-	font-family: var(--normal-font);
-}
-
-#overview>div:last-of-type>div:first-of-type>div {
-	height: 130px;
-	width: 130px;
-	border: 6px solid var(--highlight-color);
-	border-bottom-color: transparent;
-	border-radius: 9999px;
-	animation: 1000ms loadAnim linear infinite;
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	z-index: 10;
-}
-
-/* Used (https://codepen.io/vank0/pen/mARwLg?editors=1100) by vank0 as basis for this animation*/
-@keyframes loadAnim {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 /* Content */
@@ -309,14 +175,4 @@ main {
 #detail>p:nth-of-type(3) {
 	grid-row: 5 / 5;
 	margin-bottom: 20px;
-}
-
-/* Styling classes */
-.hide {
-	display: none;
-}
-
-.filtered {
-	position: absolute;
-	left: -9999px;
 }
