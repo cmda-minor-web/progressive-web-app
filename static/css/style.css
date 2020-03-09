@@ -14,6 +14,11 @@ body{
   overflow-x: hidden;
 }
 
+main{
+  max-width: 80vw;
+  margin: auto;
+}
+
 header div{
   display: flex;
   flex-direction: row;
@@ -116,6 +121,11 @@ header div a{
 .detail-section article figure{
   display: flex;
   place-content: center;
+  margin: 0;
+}
+
+.detail-section article figure figcaption{
+  padding: 3rem;
 }
 
 footer{

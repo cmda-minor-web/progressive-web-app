@@ -10,20 +10,33 @@
     <main id="content">
 
 
-        <section data-genre-name="Action"><h2>Action</h2><div class="wrapper">
+     <section class="detail-section">
 
-        
+    
+
+            <article>
+                <header>
+                    <h1><%= movie.title %></h1>
+                </header>
+                <figure>
+                    <img src="https://image.tmdb.org/t/p/w342/<%= movie.poster_path %>" alt="<%= movie.title %>">
+                    <figcaption>
+                        <div>Genres: <%= movie.genres.map(obj => obj.name).join(", ") %> </div>
+                        <div><%= movie.overview %></div>
+                    </figcaption>
+                </figure>
+            </article>
                 
-                <a href="#movie/<%=movie.id%>">
+                </section>
+                <!-- <a href="#movie/<%=movie.id%>">
                     <article>
                         <h3><%= movie.title %></h3>
                         <img src="https://image.tmdb.org/t/p/w342/<%= movie.poster_path %>" alt="<%= movie.title %>">
                         <div data-ui="rating"><%= movie.vote_average %></div>
                     </article>
-                </a>
+                </a> -->
      
-        </div>
-    </section>
+
    
 
 
