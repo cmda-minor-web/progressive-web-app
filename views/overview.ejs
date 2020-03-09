@@ -7,7 +7,7 @@
 		<section id="overview">
 			<div>
 				<% data.forEach(item => { %>
-				<a href="/apod<%= item.id %>">
+				<a href="/apod/<%= item.id %>">
 					<span>
 						<img src="<%= item.hdurl %>" title="<%= item.title %>" alt="NASA Astronomy Picture">
 						<p><%= item.date %></p>

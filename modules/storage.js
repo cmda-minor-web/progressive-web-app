@@ -5,7 +5,10 @@ const storage = {
 	getStoredData: () => fs.readFileSync('./storage/data.json', {
 		encoding: 'utf8'
 	}),
-	saveJSON: data => fs.writeFileSync('./storage/data.json', JSON.stringify(data))
+	saveJSON: data => {
+		fs.writeFileSync('./storage/data.json', JSON.stringify(data))
+		return data
+	}
 }
 
 
