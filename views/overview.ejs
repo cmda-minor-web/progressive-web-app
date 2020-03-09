@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('components/head.ejs') %>
+
+<body>
+    <header> This product uses the TMDb API but is not endorsed or certified by TMDb. <div> <input type="text"
+                placeholder="Search for a movie..." required> <a href="#search">Search</a> </div>
+    </header>
+    <main id="content">
+
+
+        <section data-genre-name="Action"><h2>Action</h2><div class="wrapper">
+
+            <% data.forEach((movie)=> { %>
+                
+                <a href="#movie/<%=movie.id%>">
+                    <article>
+                        <h3><%= movie.title %></h3>
+                        <img src="https://image.tmdb.org/t/p/w342/<%= movie.poster_path %>" alt="<%= movie.title %>">
+                        <div data-ui="rating"><%= movie.vote_average %></div>
+                    </article>
+                </a>
+            <%})%>   
+        </div>
+    </section>
+   
+
+
+        
+
+
+    </main>
+    <footer>
+        <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p> <img
+            src="the-movie-db-logo.cb5571ba.png" alt="">
+    </footer>
+    <script src="app.c5ec5717.js"></script>
+</body>
+
+</html>
