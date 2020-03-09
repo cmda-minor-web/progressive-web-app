@@ -26,7 +26,6 @@ app.get('/', (req, res) => {
 			data
 		})
 	} else {
-		//todo put the fetch in a individual module
 		const api_key = "OC0EStJnYMjAhVtZl88wJjWA75lDZflYUzVmBaJ5"
 		const start_date = "2020-01-01"
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${api_key}&start_date=${start_date}`
@@ -45,3 +44,5 @@ app.get('/', (req, res) => {
 
 
 //todo schoon de styles.css file op -> er staat nu nog heel veel troep in
+//todo fix favicon, logo en font (assets in static)
+//todo put the fetch in a individual module
