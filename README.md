@@ -53,6 +53,11 @@ Searching movies
 Overview page of movie genres
 Single page detail page
 
+## Micro features / interactions
+* Custom scrollbar
+* Grid horizontal scroll on smaller devices
+* 
+
 ## Wishlist
 * Preload skeleton layout. Image reflow.
 * Keeping track of history / hashes to enable the user to pick up where they left of.

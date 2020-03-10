@@ -48,13 +48,13 @@ router.get('/', (req, res)=>{
                 }
             })
 
-            console.log(Promise.all(json))
+            // console.log(Promise.all(json))
 
 
             return Promise.all(json)
         })
         .then(data => {
-            console.log("Dewdwfwefwefwefwfewef", data)
+            // console.log("Dewdwfwefwefwefwfewef", data)
             // console.log("Data: ", data)
 
             return data;
