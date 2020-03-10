@@ -1,4 +1,14 @@
-<header> This product uses the TMDb API but is not endorsed or certified by TMDb.
+<header> 
+    
+    <noscript>
+        <style>
+            .wrapper article.loading img{
+                animation: none;
+            }
+        </style>
+    </noscript>
+    
+    This product uses the TMDb API but is not endorsed or certified by TMDb.
     <form data-search-movie method="POST" action="/search">
         <input type="text" name="searchValue" placeholder="Search for a movie..." required>
         <button>Search</button>

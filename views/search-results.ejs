@@ -7,10 +7,11 @@
     <%- include('components/header.ejs') %>
     <main id="content">
         <div class="wrapper">
+            <h2>Results:</h2>
         <% data.forEach((movie)=> { %>
             
                 <a href="movie/<%= movie.id %>">
-                    <article>
+                    <article class="loading">
                         <h3><%= movie.title %></h3>
                         <img src="<%= movie.poster_path %>" alt="<%= movie.title %>">
                         <div data-ui="rating"><%= movie.vote_average %></div>
