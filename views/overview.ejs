@@ -4,15 +4,14 @@
 <%- include('components/head.ejs') %>
 
 <body>
-    <header> This product uses the TMDb API but is not endorsed or certified by TMDb. <div> <input type="text"
-                placeholder="Search for a movie..." required> <a href="#search">Search</a> </div>
-    </header>
+    <%- include('components/header.ejs') %>
     <main id="content">
 
         <% data.forEach((genre)=> { %>
             
-        <section data-genre-name="Action"><h2><%= genre.name %></h2><div class="wrapper">
-
+        <section data-genre-name="<%= genre.name %>">
+            <div class="wrapper">
+                <h2><%= genre.name %></h2>
             <% 
                 genre.data.results.forEach((movie, i)=> { 
                     if(i < 3){
