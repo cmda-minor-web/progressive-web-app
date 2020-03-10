@@ -5,18 +5,25 @@
 <body>
 	<main>
 		<section id="overview">
+			<%- include('header') %>
+			<%- include('user_actions') %>
 			<div>
+				<% if (locals.data) { %>
 				<% data.forEach(item => { %>
-				<a href="/apod/<%= item.id %>">
+				<a href="/apod/<%= item.id %>" copyright="<%= item.copyright %>">
 					<span>
 						<img src="<%= item.hdurl %>" title="<%= item.title %>" alt="NASA Astronomy Picture">
 						<p><%= item.date %></p>
 					</span>
 				</a>
-				<% }) %>
+				<% }) } else { %>
+				<p>Something went wrong, could load data!</p>
+				<% } %>
 			</div>
 		</section>
 	</main>
+
+	<script type="module" src="../scripts/handlers.js"></script>
 </body>
 
 </html>

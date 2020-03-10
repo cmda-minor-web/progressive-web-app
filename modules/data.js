@@ -18,7 +18,7 @@ function filterDataMedia_types(data) {
 
 
 function copyrightGoodDefault(data) {
-	data.map(item => item.copyright = (item.copyright === undefined) ? "public domain" : item.copyright)
+	data.map(item => item.copyright = (item.copyright === undefined) ? "public_domain" : item.copyright)
 	return data
 }
 

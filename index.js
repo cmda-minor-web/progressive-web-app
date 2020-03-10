@@ -34,6 +34,11 @@ app.get('/', (req, res) => {
 	}
 })
 
+//todo css opdelen in kleine files
+//todo gulp gebruiken om css te bundelen (COMMIT VOORDAT JE HIER AAN BEGINT)
+
+
+
 //Serve detail page
 app.get('/apod/:id', (req, res) => {
 	const id = req.params.id
@@ -50,6 +55,7 @@ app.get('/apod/:id', (req, res) => {
 		})
 	}
 })
+
 
 //Serve 404 page not found
 app.get('/*', (req, res) => {
