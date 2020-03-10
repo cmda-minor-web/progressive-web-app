@@ -19,16 +19,21 @@ console.log("hallo")
 
 
     // getData(`movie/${req.params.id}`)
-    getData(`movie/${req.params.id}`)
+    Promise.all([
+        getData(`movie/${req.params.id}`),
+        getData(`movie/${req.params.id}/videos`),
+    ])
         // .then(json =>{
         //     return cleanObjects(json.results, ["id", "title", "poster_path", "vote_average", "overview"]);
         // })
-        .then(json => hasImage(json))
-        .then(data => {
-         console.log('GOO:', data)
+
+        .then(([data, trailers]) => [hasImage(data), trailers])
+        .then(([data, trailers]) => {
+         console.log('GOO:', trailers)
 
             res.render("detail-page.ejs", {
-                movie:data
+                movie:data,
+                trailers:trailers.results
             })
         })
 

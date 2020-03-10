@@ -8,7 +8,7 @@
     <main id="content">
 
 
-     <section class="detail-section">
+        <section class="detail-section">
             <article>
                 <header>
                     <h1><%= movie.title %></h1>
@@ -21,21 +21,27 @@
                     </figcaption>
                 </figure>
             </article>
-                
-                </section>
-                <!-- <a href="#movie/<%=movie.id%>">
+            <% if(Array.isArray(trailers)){ 
+                if('key' in trailers[0] == true){
+                %>
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/<%= trailers[0].key%>">
+            </iframe>
+            <% }} %>
+
+        </section>
+        <!-- <a href="#movie/<%=movie.id%>">
                     <article>
                         <h3><%= movie.title %></h3>
                         <img src="https://image.tmdb.org/t/p/w342/<%= movie.poster_path %>" alt="<%= movie.title %>">
                         <div data-ui="rating"><%= movie.vote_average %></div>
                     </article>
                 </a> -->
-     
-
-   
 
 
-        
+
+
+
+
 
 
     </main>
