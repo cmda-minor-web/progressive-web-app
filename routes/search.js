@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const getData = require('../helpers/getData')
 const bodyParser = require('body-parser')
+const cleanObjects = require('../helpers/cleanData')
 
 // Local data
 // const data = require("../helpers/fakeData")
@@ -38,15 +39,18 @@ router.post('/search', (req, res)=>{
         const query = req.body.searchValue;
 
 
-        getData('search/movie', `query=${query}`)
-            .then(data => {
-               return data.json()
+        // getData('search/movie', `query=${query}`)
+        //     .then(data => {
+        //        return data.json()
                
-            })
-            .then(json => {
-                console.log(json)
-                res.render('search-results.ejs', {data:json})
-            })
+        //     })
+        //     // .then(json =>{
+        //     //     return cleanObjects(json.results, ["id", "title", "poster_path", "vote_average"]);
+        //     // })
+        //     .then(json => {
+        //         // console.log(json)
+        //         res.render('search-results.ejs', {data:json})
+        //     })
     
         // getGenres()
  

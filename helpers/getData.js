@@ -10,6 +10,8 @@ function getData(endpoint, params){
     if(params){
          parameters = `&${params}`;
     }
+
+    console.log(`tadaaa: https://api.themoviedb.org/3/${endpoint}?api_key=${apiKey}${parameters}`)
     return fetch(`https://api.themoviedb.org/3/${endpoint}?api_key=${apiKey}${parameters}`)
 
 }
