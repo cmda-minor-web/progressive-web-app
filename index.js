@@ -40,6 +40,10 @@ app.get('/apod/:id', (req, res) => {
 	const data = JSON.parse(storage.getStoredData())
 
 	res.render("detail", {
-		data: data[id]
+		data: data[(data.length - 1) - id]
 	})
+})
+
+app.get('/*', (req, res) => {
+	console.log('404 page not found!')
 })
