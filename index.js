@@ -1,8 +1,8 @@
-//Require NPM packages
 const express = require('express')
-const app = express()
 const storage = require('./modules/storage.js')
 const fetcher = require('./modules/api.js')
+
+const app = express()
 
 //Set path to static assets folder
 app.use(express.static('static'))
@@ -37,5 +37,3 @@ app.get('/apod/:id', (req, res) => {
 		data: data[id]
 	})
 })
-
-//todo: wanneer data.json niet bestaat en je refreshed dan word er niks gerendered -> geen idee waarom niet (vraag aan alumni)

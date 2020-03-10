@@ -136,7 +136,7 @@ main {
 	max-width: 900px;
 }
 
-#detail>a:first-of-type {
+#detail>a {
 	grid-column: 2 / 3;
 	grid-row: 1 / 1;
 	justify-self: end;

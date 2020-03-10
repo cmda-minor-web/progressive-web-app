@@ -1,6 +1,7 @@
 const fetch = require('node-fetch')
 const cleaner = require('../modules/data.js')
 const storage = require('../modules/storage.js')
+const utils = require('../modules/utils.js')
 
 const api_key = "OC0EStJnYMjAhVtZl88wJjWA75lDZflYUzVmBaJ5"
 const start_date = "2020-01-01"
@@ -10,12 +11,15 @@ const necessaryProperties = ['date', 'hdurl', 'title', 'explanation', 'copyright
 const fetcher = {
 	api: (req, res) => {
 		fetch(url)
-			.then(res => res.json())
+			.then(response => response.json())
 			.then(data => cleaner(data, necessaryProperties))
-			.then(cleanedData => storage.saveJSON(cleanedData))
-			.then(data => res.render("overview", {
-				data
-			}))
+			.then(cleanData => utils.orderData(cleanData))
+			.then(orderedData => storage.saveJSON(orderedData))
+			.then(data => {
+				res.render("overview", {
+					data
+				})
+			})
 			.catch(err => console.log(`Fetch error: ${err}`))
 	}
 }
