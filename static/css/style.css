@@ -172,7 +172,10 @@ footer{
 
 
 
-@media screen and (max-width: 67.875em){
+/* @media screen and (max-width: 67.875em){ */
+
+@media screen and (max-width: 83.375em){
+  
   .wrapper{
     display: flex;
     flex-wrap: nowrap;

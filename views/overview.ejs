@@ -14,7 +14,7 @@
                 <h2><%= genre.name %></h2>
             <% 
                 genre.data.results.forEach((movie, i)=> { 
-                    if(i < 3){
+                    if(i < 4){
             %>
                 
                 <a href="movie/<%=movie.id%>">
@@ -37,9 +37,8 @@
     </main>
     <footer>
         <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p> <img
-            src="the-movie-db-logo.cb5571ba.png" alt="">
+            src="/images/the-movie-db-logo.cb5571ba.png" alt="">
     </footer>
-    <script src="app.c5ec5717.js"></script>
 </body>
 
 </html>

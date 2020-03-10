@@ -38,24 +38,24 @@ router.get('/', (req, res)=>{
     
         getGenres()
  
-        .then(objects => {
-            // console.log(data)
+        // .then(objects => {
+        //     // console.log(data)
          
-            const json = objects.map(async (obj) => {
-                return {
-                    name: obj.name,
-                    data: await obj.data.json()
-                }
-            })
+        //     const json = objects.map(async (obj) => {
+        //         return {
+        //             name: obj.name,
+        //             data: await obj.data.json()
+        //         }
+        //     })
 
-            // console.log(Promise.all(json))
+        //     // console.log(Promise.all(json))
 
 
-            return Promise.all(json)
-        })
+        //     return Promise.all(json)
+        // })
         .then(data => {
             // console.log("Dewdwfwefwefwefwfewef", data)
-            // console.log("Data: ", data)
+            console.log("Data: ", data)
 
             return data;
         })
