@@ -39,11 +39,18 @@ app.get('/apod/:id', (req, res) => {
 	const id = req.params.id
 	const data = JSON.parse(storage.getStoredData())
 
-	res.render("detail", {
-		data: data[(data.length - 1) - id]
-	})
+	if (parseInt(id) > data[0].id) {
+		console.log('404 page not found!')
+		res.render("404")
+	} else {
+		res.render("detail", {
+			data: data[(data.length - 1) - id]
+		})
+	}
 })
 
+//Serve 404 page not found
 app.get('/*', (req, res) => {
 	console.log('404 page not found!')
+	res.render("404")
 })
