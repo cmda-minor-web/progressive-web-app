@@ -1,6 +1,7 @@
 const express = require('express')
 const storage = require('./modules/storage.js')
 const fetcher = require('./modules/api.js')
+const utils = require('./modules/utils.js')
 
 const app = express()
 
@@ -19,10 +20,15 @@ app.listen(3000, () => console.log(`App now listening on port 3000!`))
 app.get('/', (req, res) => {
 	if (storage.checkIfFileExists()) {
 		const data = JSON.parse(storage.getStoredData())
+		const equalDates = utils.checkDates(data)
 
-		res.render("overview", {
-			data
-		})
+		if (equalDates) {
+			res.render("overview", {
+				data
+			})
+		} else {
+			fetcher.api(req, res)
+		}
 	} else {
 		fetcher.api(req, res)
 	}

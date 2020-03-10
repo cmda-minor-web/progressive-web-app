@@ -3,13 +3,13 @@ const cleaner = require('../modules/data.js')
 const storage = require('../modules/storage.js')
 const utils = require('../modules/utils.js')
 
-const api_key = "OC0EStJnYMjAhVtZl88wJjWA75lDZflYUzVmBaJ5"
-const start_date = "2020-01-01"
-const url = `https://api.nasa.gov/planetary/apod?api_key=${api_key}&start_date=${start_date}`
-const necessaryProperties = ['date', 'hdurl', 'title', 'explanation', 'copyright', 'media_type']
-
 const fetcher = {
 	api: (req, res) => {
+		const start_date = utils.createStartYearDate()
+		const api_key = "OC0EStJnYMjAhVtZl88wJjWA75lDZflYUzVmBaJ5"
+		const url = `https://api.nasa.gov/planetary/apod?api_key=${api_key}&start_date=${start_date}`
+		const necessaryProperties = ['date', 'hdurl', 'title', 'explanation', 'copyright', 'media_type']
+
 		fetch(url)
 			.then(response => response.json())
 			.then(data => cleaner(data, necessaryProperties))
