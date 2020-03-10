@@ -8,7 +8,11 @@
 			<section id="error404">
 				<div>
 					<h1>404</h1>
-					<h6>page not found</h6>
+					<% if (locals.detail) { %>
+					<h6>Detailpage for requested Picture does not exist</h6>
+					<% } else { %>
+					<h6>Page not found</h6>
+					<% } %>
 					<p>Click anywhere to go back to the homepage</p>
 				</div>
 			</section>
