@@ -1,5 +1,5 @@
 # Ignore binary apple file
-.DS_Store
+**/.DS_Store
 
 # Ignore stored data
 storage
