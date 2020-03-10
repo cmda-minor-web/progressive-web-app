@@ -6,10 +6,6 @@ const getData = require('../helpers/getData')
 // const data = require("../helpers/fakeData")
 const genreIdList = require("../helpers/genreIdList")
 
-function test(req, res, next){
-    console.log("test middleware")
-    next()
-}
 
 function getGenres(){
     // return (Promise.all(genreIdList.map((genre) =>{
@@ -23,7 +19,7 @@ function getGenres(){
         }
     })
 
-    console.log('dasdsd', Promise.all(test));
+    console.log(test)
 
     return Promise.all(test);
 
@@ -53,7 +49,8 @@ router.get('/', (req, res)=>{
             })
 
             console.log(Promise.all(json))
-            console.log("why doesn't it fck work")
+
+
             return Promise.all(json)
         })
         .then(data => {

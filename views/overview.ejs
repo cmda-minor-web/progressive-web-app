@@ -13,7 +13,10 @@
             
         <section data-genre-name="Action"><h2><%= genre.name %></h2><div class="wrapper">
 
-            <% genre.data.results.forEach((movie)=> { %>
+            <% 
+                genre.data.results.forEach((movie, i)=> { 
+                    if(i < 3){
+            %>
                 
                 <a href="movie/<%=movie.id%>">
                     <article>
@@ -22,7 +25,8 @@
                         <div data-ui="rating"><%= movie.vote_average %></div>
                     </article>
                 </a>
-            <%})%>   
+
+            <%}})%>   
         </div>
     </section>
     <%})%>   
