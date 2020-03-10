@@ -11,9 +11,6 @@
 
 
      <section class="detail-section">
-
-    
-
             <article>
                 <header>
                     <h1><%= movie.title %></h1>
@@ -21,8 +18,7 @@
                 <figure>
                     <img src="<%= movie.poster_path %>" alt="<%= movie.title %>">
                     <figcaption>
-                   
-                     
+                        <div>Genres: <%= movie.genres.map(obj => obj.name).join(", ") %> </div>
                         <div><%= movie.overview %></div>
                     </figcaption>
                 </figure>
@@ -46,9 +42,10 @@
 
     </main>
     <footer>
-        <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p> 
-        <img src="/images/the-movie-db-logo.cb5571ba.png" alt="">
+        <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p> <img
+            src="the-movie-db-logo.cb5571ba.png" alt="">
     </footer>
+    <script src="app.c5ec5717.js"></script>
 </body>
 
 </html>

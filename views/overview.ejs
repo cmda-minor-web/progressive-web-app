@@ -9,15 +9,15 @@
 
         <% data.forEach((genre)=> { %>
             
-        <section data-genre-name="<%= genre.name %>">
+        <section class="overview-section" data-genre-name="<%= genre.name %>">
             <div class="wrapper">
                 <h2><%= genre.name %></h2>
             <% 
                 genre.data.results.forEach((movie, i)=> { 
                     if(i < 4){
             %>
-                
-                <a href="movie/<%=movie.id%>">
+            
+                <a href="movie/<%= movie.id%>/<%= movie.title.replace(/\s+/g, '-').toLowerCase(); %>">
                     <article>
                         <h3><%= movie.title %></h3>
                         <img src="https://image.tmdb.org/t/p/w342/<%= movie.poster_path %>" alt="<%= movie.title %>">

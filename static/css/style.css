@@ -14,10 +14,10 @@ body{
   overflow-x: hidden;
 }
 
-main{
+/* main{
   max-width: 80vw;
   margin: auto;
-}
+} */
 
 header form{
   display: flex;
@@ -67,7 +67,7 @@ header form button{
   display: grid;
   grid-template-columns: repeat(auto-fill, 20rem);
   position: relative;
-  padding: 5rem 0 0 0;
+  /* padding: 5rem 0 0 0; */
   grid-gap: 2rem;
   justify-content: center;
 }
@@ -142,6 +142,11 @@ header form button{
   transition: all .3s;
 }
 
+.detail-section article{
+  max-width: 80vw;
+  margin: 3rem auto;
+}
+
 .detail-section article figure{
   display: flex;
   place-content: center;
@@ -150,6 +155,20 @@ header form button{
 
 .detail-section article figure figcaption{
   padding: 3rem;
+}
+
+.detail-section article figure figcaption [data-description]{
+  max-width: 60ch;
+}
+
+.overview-section{
+  background: radial-gradient(#3a3a3a 30%, #0c0c0c 95%);
+  padding: 5rem;
+}
+
+.overview-section .wrapper{
+  max-width: 80vw;
+  margin: auto;
 }
 
 footer{

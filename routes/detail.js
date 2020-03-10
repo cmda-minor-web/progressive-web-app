@@ -5,7 +5,7 @@ const hasImage = require('../helpers/hasImage')
 // Local data
 // const data = require("../helpers/fakeData")
 
-router.get('/movie/:id', (req, res)=>{
+router.get('/movie/:id/:title', (req, res)=>{
 console.log("hallo")
 
 // getData(`movie/${req.params.id}`)
@@ -25,7 +25,7 @@ console.log("hallo")
         // })
         .then(json => hasImage(json))
         .then(data => {
-         console.log('GOOOOOOOOOOOOL:', data)
+         console.log('GOO:', data)
 
             res.render("detail-page.ejs", {
                 movie:data
