@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const getData = require('../helpers/getData')
 const hasImage = require('../helpers/hasImage')
+const path = require('path')
+const render = require('../static-generator/render')
+
 // Local data
 // const data = require("../helpers/fakeData")
 
@@ -35,13 +38,28 @@ console.log("hallo")
             return [data, trailers]
         })
         .then(([data, trailers]) => [hasImage(data), trailers])
-        .then(([data, trailers]) => {
-         console.log('GOO:', trailers)
+        // .then(([data, trailers]) => {
+        //  console.log('GOO:', trailers)
 
-            res.render("detail-page.ejs", {
-                movie:data,
-                trailers:trailers.results
-            })
+        //     res.render("detail-page.ejs", {
+        //         movie:data,
+        //         trailers:trailers.results
+        //     })
+        // })
+        .then(([data, trailers]) => {
+            // res.render("detail-page.ejs", {
+            //     movie:data,
+            //     trailers:trailers.results
+            // })
+
+            
+                render({
+                    movie:data,
+                    trailers:trailers.results
+                })
+            
+                res.sendFile(path.resolve(__dirname,'../static-generator/html/detail-1.html'))
+
         })
 
     // res.render("detail-page.ejs", {

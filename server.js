@@ -11,9 +11,13 @@ const search = require('./routes/search.js')
 
 const bodyParser = require('body-parser')
 const path = require("path")
+
+const partials = require('express-partials');
 // app.get('/', (req, res) => res.send('Hello World!'))
 app
+    
     .use(bodyParser.urlencoded({ extended: true }))
+    
     .set('view-engine', 'ejs')
     .set('views', path.join(__dirname,'views'))
 
