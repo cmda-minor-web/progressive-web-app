@@ -27,6 +27,13 @@ console.log("hallo")
         //     return cleanObjects(json.results, ["id", "title", "poster_path", "vote_average", "overview"]);
         // })
 
+        .then(([data, trailers]) => {
+            // console.log(data)
+             data.genres = data.genres.map(obj => obj.name).join(", ")
+
+            console.log(data)
+            return [data, trailers]
+        })
         .then(([data, trailers]) => [hasImage(data), trailers])
         .then(([data, trailers]) => {
          console.log('GOO:', trailers)

@@ -57,10 +57,22 @@ router.get('/', (req, res)=>{
             // console.log("Dewdwfwefwefwefwfewef", data)
             console.log("Data: ", data)
 
-            return data;
+           return (data.map(genre =>{
+               
+                genre.data.results.map(movie =>{
+                    movie.slug = movie.title.replace(/\s+/g, '-').toLowerCase();
+                    return movie;
+                })
+                return genre
+            }))
+
+            // return data;
         })
 
         .then(genre =>{
+
+            console.log("Genres: " + genre[0].data.results[0].slug)
+
             res.render("overview.ejs", {
                 data:genre
             })

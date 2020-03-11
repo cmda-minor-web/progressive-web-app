@@ -16,7 +16,7 @@
                 <figure>
                     <img src="<%= movie.poster_path %>" alt="<%= movie.title %>">
                     <figcaption>
-                        <div>Genres: <%= movie.genres.map(obj => obj.name).join(", ") %> </div>
+                        <div>Genres: <%= movie.genres %> </div>
                         <div><%= movie.overview %></div>
                     </figcaption>
                 </figure>
