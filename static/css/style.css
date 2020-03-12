@@ -65,12 +65,14 @@ header form button{
 
 .wrapper{
   display: grid;
-  grid-template-columns: repeat(auto-fill, 20rem);
-  grid-template-rows: 1rem 40.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 23%));
+  /* grid-template-rows: 1rem 40.25rem; */
+
+  justify-content: center;
   position: relative;
   /* padding: 5rem 0 0 0; */
   grid-gap: 2rem;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .wrapper article{
@@ -83,6 +85,10 @@ header form button{
   flex-direction: column;
   color: var(--white);
   position: relative;
+}
+
+.wrapper article img{
+  width: 100%;
 }
 
 /* .wrapper article::after{
@@ -199,9 +205,31 @@ header form button{
 }
 
 .overview-section .wrapper{
-  max-width: 80vw;
-  margin: auto;
+  /* max-width: 80vw;
+  margin: auto; */
+  width: 100%;
+  /* overflow-y: hidden; */
 }
+
+iframe{
+  /* animation: test 2s; */
+  width: 100%;
+  height: 60vh;
+  border: none;
+  box-shadow: inset black -15rem 5rem 5rem;
+}
+
+@keyframes test{
+  from{
+    width: 30vw;
+    height: 30vh;
+  }
+  to{
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
 
 footer{
   text-align: center;
@@ -223,24 +251,34 @@ footer{
 
 
 
+
 /* @media screen and (max-width: 67.875em){ */
 
 @media screen and (max-width: 83.375em){
   
   .wrapper{
     display: flex;
-    flex-wrap: nowrap;
+    /* flex-wrap: wrap; */
     scroll-snap-type: x mandatory;
     overflow-x: scroll;
     justify-content: unset;
+
+  }
+
+  .wrapper h2{
+    width: 100%;
+  }
+
+  .wrapper a{
+    flex: 1;
   }
 
   .wrapper article{
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    width: 85vw;
+    width: 95vw;
     flex: 0 0 auto;
-    margin: .75rem;
+    margin: 0 .75rem;
     max-width: 22rem;
   }
 
@@ -259,3 +297,4 @@ footer{
     margin: .5rem;
   }
 }
+
