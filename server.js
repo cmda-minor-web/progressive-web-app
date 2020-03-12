@@ -17,7 +17,7 @@ const partials = require('express-partials');
 app
     
     .use(bodyParser.urlencoded({ extended: true }))
-    
+    .use(partials())
     .set('view-engine', 'ejs')
     .set('views', path.join(__dirname,'views'))
 
