@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const getData = require('../helpers/getData')
 
+
+
 // Local data
 // const data = require("../helpers/fakeData")
 const genreIdList = require("../helpers/genreIdList")
@@ -35,7 +37,7 @@ router.get('/', (req, res)=>{
 
   
    
-    
+    console.log(process.env.test)
         getGenres()
  
         // .then(objects => {

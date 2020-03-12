@@ -56,9 +56,11 @@ console.log("hallo")
                 render({
                     movie:data,
                     trailers:trailers.results
+                }).then(html => {
+                    res.sendFile(path.resolve(__dirname,'../static-generator/html/detail-1.html'))
                 })
             
-                res.sendFile(path.resolve(__dirname,'../static-generator/html/detail-1.html'))
+                
 
         })
 

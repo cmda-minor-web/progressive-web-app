@@ -6,7 +6,7 @@
 
 body{
   font-family: sans-serif;
-  background-color: var(--grey);
+  background-color: var(--grey, #383838);
   color: #fff;
   box-sizing: border-box;
   margin: 0;

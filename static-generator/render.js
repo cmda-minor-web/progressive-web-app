@@ -3,17 +3,17 @@ const fs   = require('fs');
 const path = require("path");
 
 
-function render(data){
+async function render(data){
     // const template = fs.readFileSync(path.resolve(__dirname,'../views/detail-page.ejs'),  'utf-8')
 
-    const template = fs.readFileSync('views/detail-page.ejs',  'utf-8')
+    // const template = fs.readFileSync('views/detail-page.ejs',  'utf-8')
 
-    const html = ejs.render ( template , data )
+    const parsedHTML = await ejs.renderFile( path.join(__dirname, '..', 'views/detail-page.ejs') , data )
+        .then(html => writeHTML(data, html))
 
-    console.log(data)
 
-    writeHTML(data, html)
-    
+        return parsedHTML;
+
 }
 
 function writeHTML(data, html){
