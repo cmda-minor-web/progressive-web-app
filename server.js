@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 8080
+const port =  "3000"
 
 const overview = require('./routes/overview.js')
 const detail = require('./routes/detail.js')
