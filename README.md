@@ -60,6 +60,7 @@ Search results view
 
 ## Known bugs
 * Layout breaks a bit sometimes on mobile. That's because of some design choices which I have to review right now.
+* Missing navigation
 
 ## Future features
 I've gotten in to the shadow dom way too late, but better late than never. I was very eager to apply this system with actual webcomponents into my web-app, but due time I have to keep my hands of it and finish the foundation I've been working on.
