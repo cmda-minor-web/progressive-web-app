@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dfd9d0c6-ce60-4e14-9b56-61435eb833a8/deploy-status)](https://app.netlify.com/sites/progressive-web-apps-1920/deploys)
-
 # Table of Contents
 * [Demo](https://progressive-web-apps-1920.netlify.com)
 * [Assignment](#assignment)
