@@ -21,7 +21,7 @@ function getGenres(){
         }
     })
 
-    console.log(test)
+    // console.log(test)
 
     return Promise.all(test);
 
@@ -37,7 +37,7 @@ router.get('/', (req, res)=>{
 
   
    
-    console.log(process.env.test)
+
         getGenres()
  
         // .then(objects => {
@@ -57,7 +57,7 @@ router.get('/', (req, res)=>{
         // })
         .then(data => {
             // console.log("Dewdwfwefwefwefwfewef", data)
-            console.log("Data: ", data)
+            // console.log("Data: ", data)
 
            return (data.map(genre =>{
                
@@ -73,10 +73,11 @@ router.get('/', (req, res)=>{
 
         .then(genre =>{
 
-            console.log("Genres: " + genre[0].data.results[0].slug)
+            // console.log("Genres: " + genre[0].data.results[0].slug)
 
             res.render("overview.ejs", {
-                data:genre
+                data:genre,
+                form: genreIdList
             })
         })
 
