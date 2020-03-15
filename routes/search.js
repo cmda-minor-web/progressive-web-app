@@ -34,27 +34,29 @@ function getGenres(){
     //  }))
 }
 
-router.post('/search', (req, res)=>{
+router.get('/search/:genre?', (req, res)=>{
 
   
-        const query = req.body.searchValue;
+        // const query = req.body.searchValue;
+
+        console.log(req.query)
 
 
-        getData('search/movie', `query=${query}`)
-            // .then(data => {
-            //    return data.json()
+        // getData('search/movie', `query=${query}`)
+        //     // .then(data => {
+        //     //    return data.json()
                
-            // })
-            .then(json =>{
-                return cleanObjects(json.results, ["id", "title", "poster_path", "vote_average"]);
-            })
-            .then(json => hasImage(json))
-            .then(json => {
-                console.log(json)
-                res.render('search-results.ejs', {
-                    data:json
-                })
-            })
+        //     // })
+        //     .then(json =>{
+        //         return cleanObjects(json.results, ["id", "title", "poster_path", "vote_average"]);
+        //     })
+        //     .then(json => hasImage(json))
+        //     .then(json => {
+        //         console.log(json)
+        //         res.render('search-results.ejs', {
+        //             data:json
+        //         })
+        //     })
     
         // getGenres()
  
