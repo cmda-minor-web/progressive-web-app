@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const hasImage = require('../helpers/hasImage')
 const getData = require('../helpers/getData')
 
 
@@ -63,6 +64,7 @@ router.get('/', (req, res)=>{
                
                 genre.data.results.map(movie =>{
                     movie.slug = movie.title.replace(/\s+/g, '-').toLowerCase();
+                    hasImage(movie)
                     return movie;
                 })
                 return genre
