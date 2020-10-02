@@ -18,7 +18,7 @@ in your application_
 
 ### Week 1 - Server Side Rendering 📡
 
-Goal: Render web pages server side
+Goal: Render your websites at a faster rate 
 
 [Exercises](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-1.md)  
 [Slides](https://docs.google.com/presentation/d/e/2PACX-1vRV01K4Md6jJ6tTE978g7yzm16HZhbpoRO2tkW8Y4aCnnPxZci9PWpeDofKilRdRbxOjkfxGmQxZiI4/pub?start=false&loop=false&delayms=3000)  
@@ -27,7 +27,7 @@ Goal: Render web pages server side
 
 ### Week 2 - Progressive Web App 🚀
 
-Goals: Convert application to a Progressive Web App
+Goals: Convert Normal application into a Progressive Web App
 
 [Exercises](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-2.md)  
 [Progressive Web Aps - slides Declan Rek](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/cmd-2020-progressive-web-apps.pdf)
